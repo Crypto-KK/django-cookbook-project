@@ -77,7 +77,7 @@ class BulletinForm(forms.ModelForm):
         actions = bootstrap.FormActions(submit_button)
 
         self.helper = helper.FormHelper()
-        self.helper.form_action = "bulletin-change"
+        self.helper.form_action = ""
         self.helper.form_method = "POST"
         self.helper.layout = layout.Layout(
             main_fieldset,

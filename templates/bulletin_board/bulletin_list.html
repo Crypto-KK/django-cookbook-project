@@ -3,6 +3,11 @@
 {% block content %}
 <h2>Bulletin List</h2>
 <p>
-    This will be created in a later section...
+
 </p>
+
+    {% for b in bullet %}
+        {{ b.title }}
+    {% endfor %}
+
 {% endblock %}
