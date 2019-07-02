@@ -4,8 +4,7 @@ import os, sys
 
 # Build paths inside the project like this:
 # os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(
-    os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 EXTERNAL_BASE = os.path.join(BASE_DIR, "externals")
@@ -39,7 +38,8 @@ INSTALLED_APPS = [
     # local apps
     'magazine',
     'demo_app',
-    'debug_toolbar'
+    'debug_toolbar',
+    'email_messages'
 ]
 
 MIDDLEWARE = [
