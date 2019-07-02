@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'magazine',
     'demo_app',
     'debug_toolbar',
-    'email_messages'
+    'email_messages',
+    'quotes'
 ]
 
 MIDDLEWARE = [
