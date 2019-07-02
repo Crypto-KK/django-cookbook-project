@@ -6,5 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('email/', include('email_messages.urls', namespace='email_messages')),
 
-    path('quotes/', include('quotes.urls', namespace='quote'))
+    path('quotes/', include('quotes.urls', namespace='quote')),
+    path('bulletins/', include('bulletin_board.urls'))
 ]

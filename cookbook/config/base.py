@@ -35,12 +35,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # local apps
     'magazine',
     'demo_app',
     'debug_toolbar',
     'email_messages',
-    'quotes'
+    'quotes',
+    'bulletin_board',
+
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -141,3 +145,5 @@ STATIC_URL = '/static/'
 
 
 FILE_UPLOAD_TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

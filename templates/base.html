@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    {% block base_stylesheet %}
+        <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.bootcss.com/ionicons/4.5.6/collection/icon/icon.css" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+
+    {% block base_js %}
+         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+
+</body>
+</html>
