@@ -33,18 +33,31 @@ class Like(FavoriteObjectMixin, OwnerMixin):
                  f"likes {self.content_object}")
 
 
+class Category(models.Model):
+    title = models.CharField(_('Title'), max_length=200)
+
+    def __str__(self):
+        return self.title
+
 
 class Idea(UrlMixin, CreationModificationDateMixin, MetaTagsMixin):
     class Meta:
         verbose_name = _('Idea')
         verbose_name_plural = _('Ideas')
 
-
-    # title = models.CharField(_('Title'), max_length=200)
-    # content = models.TextField(_('Content'))
     title = MultilingualCharField(_('Title'), max_length=200)
     description = MultilingualTextField(_('Description'), blank=True)
     content = MultilingualTextField(_('Content'))
+    # category = models.ForeignKey(Category,
+    #                              verbose_name=_('Category'),
+    #                              null=True,
+    #                              blank=True,
+    #                              on_delete=models.SET_NULL)
+    categories = models.ManyToManyField(Category,
+                                        verbose_name='Category',
+                                        blank=True,
+                                        related_name='ideas')
+
 
     def __str__(self):
         return self.title
