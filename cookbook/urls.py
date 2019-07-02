@@ -7,5 +7,7 @@ urlpatterns = [
     path('email/', include('email_messages.urls', namespace='email_messages')),
 
     path('quotes/', include('quotes.urls', namespace='quote')),
-    path('bulletins/', include('bulletin_board.urls', namespace='bulletins'))
+    path('bulletins/', include('bulletin_board.urls', namespace='bulletins')),
+
+    path('movies/', include('movies.urls'))
 ]

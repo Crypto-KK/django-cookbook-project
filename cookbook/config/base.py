@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'email_messages',
     'quotes',
     'bulletin_board',
+    'movies',
+
+    'utils',
 
     'crispy_forms'
 ]

@@ -1,27 +1,58 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+{% load i18n static %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <!-- META TAGS -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}{% endblock %}{% trans "My Website" %}
+    </title>
+    <link rel="icon" type="image/x-icon"
+          href="{% static 'site/img/favicon.ico' %}">
+
+    {% block meta_tags %}{% endblock %}
 
     {% block base_stylesheet %}
         <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/ionicons/4.5.6/collection/icon/icon.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="screen">
     {% endblock %}
+    {% block stylesheet %}{% endblock %}
 
+    {% block extrahead %}{% endblock %}
 </head>
-<body>
-    {% block content %}
+<body class="{% block bodyclass %}{% endblock %}">
+{% block page %}
+    <section class="wrapper">
+        <header class="clearfix container">
+            <h1>{% trans "My Website" %}</h1>
+            {% block header_navigation %}
+                {% include "utils/header_navigation.html" %}
+            {% endblock %}
+            {% block language_chooser %}
+                {% include "utils/language_chooser.html" %}
+            {% endblock %}
+        </header>
+        {% block container %}
+        <div id="content" class="clearfix container">
+            {% block content %}{% endblock %}
+        </div>
+        {% endblock %}
+        <footer class="clearfix container">
+            {% block footer_navigation %}
+                {% include "utils/footer_navigation.html" %}
+            {% endblock %}
+        </footer>
+    </section>
+{% endblock %}
+{% block extrabody %}{% endblock %}
 
-    {% endblock %}
-
-    {% block base_js %}
+{% block base_js %}
          <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
          <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    {% endblock %}
-
+        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+{% endblock %}
+{% block js %}{% endblock %}
 </body>
 </html>
