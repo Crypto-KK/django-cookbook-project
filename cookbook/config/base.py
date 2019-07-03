@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'quotes',
     'bulletin_board',
     'movies',
-
+    'cv',
     'utils',
 
     'crispy_forms'

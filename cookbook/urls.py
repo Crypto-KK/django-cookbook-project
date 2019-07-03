@@ -9,5 +9,7 @@ urlpatterns = [
     path('quotes/', include('quotes.urls', namespace='quote')),
     path('bulletins/', include('bulletin_board.urls', namespace='bulletins')),
 
-    path('movies/', include('movies.urls'))
+    path('movies/', include('movies.urls')),
+
+    path('cv/', include('cv.urls'))
 ]
