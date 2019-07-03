@@ -150,3 +150,5 @@ STATIC_URL = '/static/'
 FILE_UPLOAD_TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MAX_PAGE_SIZE = 1

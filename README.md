@@ -19,3 +19,6 @@ modelmixin的使用
 定义多语言field
 定义通用外键
 
+# movies
+使用form过滤筛选分类
+使用django.core.paginate进行分页
