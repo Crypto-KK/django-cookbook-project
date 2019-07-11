@@ -46,8 +46,11 @@ INSTALLED_APPS = [
     'movies',
     'cv',
     'utils',
+    'product',
 
-    'crispy_forms'
+    'crispy_forms',
+    'haystack',
+    'sorl.thumbnail'
 ]
 
 MIDDLEWARE = [
@@ -152,3 +155,13 @@ FILE_UPLOAD_TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MAX_PAGE_SIZE = 1
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+} # 每页显示搜索结果数目为10
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+# 自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

@@ -11,5 +11,6 @@ urlpatterns = [
 
     path('movies/', include('movies.urls')),
 
-    path('cv/', include('cv.urls'))
+    path('cv/', include('cv.urls')),
+    path('search/', include('haystack.urls')),
 ]

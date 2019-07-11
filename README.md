@@ -22,3 +22,10 @@ modelmixin的使用
 # movies
 使用form过滤筛选分类
 使用django.core.paginate进行分页
+
+# cv
+django生成pdf文档
+
+# product
+django-admin
+

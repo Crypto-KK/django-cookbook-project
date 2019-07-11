@@ -22,4 +22,7 @@ class Quote(models.Model):
     def __str__(self):
         return self.quote
 
+    @property
+    def title(self):
+        return self.quote
 

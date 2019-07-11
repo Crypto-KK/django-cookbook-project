@@ -25,8 +25,8 @@ OwnerMixin = object_relation_mixin_factory(
 
 class Like(FavoriteObjectMixin, OwnerMixin):
     class Meta:
-        verbose_name = _('Like')
-        verbose_name_plural = _('Likes')
+        verbose_name = 'Like'
+        verbose_name_plural = 'Likes'
 
     def __str__(self):
         return _(f"{self.owner_content_object} "
@@ -34,7 +34,7 @@ class Like(FavoriteObjectMixin, OwnerMixin):
 
 
 class Category(models.Model):
-    title = models.CharField(_('Title'), max_length=200)
+    title = models.CharField('Title', max_length=200)
 
     def __str__(self):
         return self.title
@@ -42,17 +42,13 @@ class Category(models.Model):
 
 class Idea(UrlMixin, CreationModificationDateMixin, MetaTagsMixin):
     class Meta:
-        verbose_name = _('Idea')
-        verbose_name_plural = _('Ideas')
+        verbose_name = 'Idea'
+        verbose_name_plural = 'Ideas'
 
-    title = MultilingualCharField(_('Title'), max_length=200)
-    description = MultilingualTextField(_('Description'), blank=True)
-    content = MultilingualTextField(_('Content'))
-    # category = models.ForeignKey(Category,
-    #                              verbose_name=_('Category'),
-    #                              null=True,
-    #                              blank=True,
-    #                              on_delete=models.SET_NULL)
+    title = models.CharField('Title', max_length=200)
+    description = models.CharField('Description', max_length=200, blank=True)
+    content = models.TextField('Content')
+
     categories = models.ManyToManyField(Category,
                                         verbose_name='Category',
                                         blank=True,
