@@ -1,7 +1,6 @@
 # bulletin_board
 django-crispy-forms的使用和通用表单视图的使用
 
-
 # quotes
 上传文件的实例
 更改文件名
